@@ -27,7 +27,7 @@ class AddActivity : AppCompatActivity() {
                 return@setOnClickListener
             }else{
                 CoroutineScope(Dispatchers.IO).launch {
-                    val note = Notes(0, "Naenda Supper", "Ugali + Cabbage")
+                    val note = Notes(0, binding.noteTitleTextView.text.toString(), binding.noteDescriptionTextView.text.toString())
                     notesDao.insertNote(note)
                 }
             }
