@@ -29,6 +29,8 @@ class AddActivity : AppCompatActivity() {
                 CoroutineScope(Dispatchers.IO).launch {
                     val note = Notes(0, binding.noteTitleTextView.text.toString(), binding.noteDescriptionTextView.text.toString())
                     notesDao.insertNote(note)
+                    startActivity(Intent(this@AddActivity, MainActivity::class.java))
+                    finish()
                 }
             }
         }
